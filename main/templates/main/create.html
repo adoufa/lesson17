@@ -9,8 +9,11 @@
 {% block content %}
     <h1>Создать задачу</h1>
     <form method="post">
-        <input type="text" placeholder="Введите название" class="form-control"><br>
-        <textarea type="text" placeholder="Введите название" class="form-control"></textarea><br>
-        <button type="submit" class="btn btn-success">Добавить</button>
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.task }}
+        <button type="submit" class="btn btn-sucsess">Добавить</button>
+    <span>{{ error }}</span>
     </form>
 {% endblock %}
+
